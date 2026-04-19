@@ -108,8 +108,8 @@ pip install numpy Pillow matplotlib icrawler
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/username/Tugas_MKPM_Kelompok3.git](https://github.com/aliefrisaldy/Tugas-Mata-Kuliah-Pembelajaran-Mendalam
-cd Tugas_MKPM_Kelompok3/source_code
+git clone https://github.com/aliefrisaldy/Tugas-Mata-Kuliah-Pembelajaran-Mendalam.git
+cd Tugas-Mata-Kuliah-Pembelajaran-Mendalam
 ```
 
 ### 2. Install Dependencies
