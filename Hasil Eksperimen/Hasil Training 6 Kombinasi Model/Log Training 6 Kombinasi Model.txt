@@ -1,0 +1,442 @@
+D:\The Journey\Semester 6\Deep Learning\Pak Yuri Yudhaswara\Pertemuan 3\Bismillah Tugas Akhir>python -u "d:\The Journey\Semester 6\Deep Learning\Pak Yuri Yudhaswara\Pertemuan 3\Bismillah Tugas Akhir\Bismillah Source Code\Preprocessing.py"
+d:\The Journey\Semester 6\Deep Learning\Pak Yuri Yudhaswara\Pertemuan 3\Bismillah Tugas Akhir\Bismillah Source Code\Preprocessing.py:6: SyntaxWarning: invalid escape sequence '\T'
+  INPUT_DIR = "D:\The Journey\Semester 6\Deep Learning\Pak Yuri Yudhaswara\Pertemuan 3\Bismillah Tugas Akhir\Dataset"
+d:\The Journey\Semester 6\Deep Learning\Pak Yuri Yudhaswara\Pertemuan 3\Bismillah Tugas Akhir\Bismillah Source Code\Preprocessing.py:7: SyntaxWarning: invalid escape sequence '\T'
+  OUTPUT_DIR = "D:\The Journey\Semester 6\Deep Learning\Pak Yuri Yudhaswara\Pertemuan 3\Bismillah Tugas Akhir\Dataset_Ready"
+==================================================
+PREPROCESSING RESIZE SPLIT DATASET
+==================================================
+Kelas: MOBIL
+Total: 500
+Train: 350
+Test: 150
+C:\Users\USER\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\PIL\Image.py:1000: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(
+Tersimpan train: 350, test: 150
+Kelas: MOTOR
+Total: 500
+Train: 350
+Test: 150
+Tersimpan train: 350, test: 150
+Membuat numpy arrays
+Saved X_train.npy (700, 64, 64, 3) | y_train.npy (700,)
+Saved X_test.npy (300, 64, 64, 3) | y_test.npy (300,)
+==================================================
+RINGKASAN AKHIR
+==================================================
+mobil      train:  350 | test:  150
+motor      train:  350 | test:  150
+Ukuran gambar: 64x64
+Output folder: D:\The Journey\Semester 6\Deep Learning\Pak Yuri Yudhaswara\Pertemuan 3\Bismillah Tugas Akhir\Dataset_Ready/
+Preprocessing selesai
+
+D:\The Journey\Semester 6\Deep Learning\Pak Yuri Yudhaswara\Pertemuan 3\Bismillah Tugas Akhir>python -u "d:\The Journey\Semester 6\Deep Learning\Pak Yuri Yudhaswara\Pertemuan 3\Bismillah Tugas Akhir\Bismillah Source Code\Augmentasi.py"
+=======================================================
+AUGMENTASI DATA TRAINING
+=======================================================
+Data original: 700
+Teknik: flip_horizontal, rotasi, brightness
+Estimasi: 700 x 6 = 4200
+50/700 → 300
+100/700 → 600
+150/700 → 900
+200/700 → 1200
+250/700 → 1500
+300/700 → 1800
+350/700 → 2100
+400/700 → 2400
+450/700 → 2700
+500/700 → 3000
+550/700 → 3300
+600/700 → 3600
+650/700 → 3900
+700/700 → 4200
+Shuffle data
+=======================================================
+RINGKASAN
+=======================================================
+Sebelum: 700 → (700, 64, 64, 3)
+Sesudah: 4200 → (4200, 64, 64, 3)
+mobil: 2100
+motor: 2100
+File:
+dataset_arrays\X_train_aug.npy
+dataset_arrays\y_train_aug.npy
+Selesai
+
+D:\The Journey\Semester 6\Deep Learning\Pak Yuri Yudhaswara\Pertemuan 3\Bismillah Tugas Akhir>python -u "d:\The Journey\Semester 6\Deep Learning\Pak Yuri Yudhaswara\Pertemuan 3\Bismillah Tugas Akhir\Bismillah Source Code\train.py"
+d:\The Journey\Semester 6\Deep Learning\Pak Yuri Yudhaswara\Pertemuan 3\Bismillah Tugas Akhir\Bismillah Source Code\train.py:31: SyntaxWarning: invalid escape sequence '\T'
+  ARRAY_DIR   = "D:\The Journey\Semester 6\Deep Learning\Pak Yuri Yudhaswara\Pertemuan 3\Bismillah Tugas Akhir\dataset_arrays"
+=======================================================
+  EKSPERIMEN TRAINING 6 KOMBINASI MODEL CNN
+=======================================================
+ Loading dataset...
+  X_train : (4200, 64, 64, 3)  |  y_train : (4200,)
+  X_test  : (300, 64, 64, 3)   |  y_test  : (300,)
+
+───────────────────────────────────────────────────────
+  Model 1/6 : 1Conv-ReLU
+  Conv layers : 1  |  Activation : relu
+───────────────────────────────────────────────────────
+  Epoch   1/50 | Loss: 0.6745 | Train Acc: 63.48% | Test Acc: 65.00%  Best Model
+  Epoch   2/50 | Loss: 0.6352 | Train Acc: 66.26% | Test Acc: 64.33%  (no improve 1/15)
+  Epoch   3/50 | Loss: 0.6133 | Train Acc: 69.43% | Test Acc: 67.33%  Best Model
+  Epoch   4/50 | Loss: 0.5985 | Train Acc: 68.76% | Test Acc: 66.33%  (no improve 1/15)
+  Epoch   5/50 | Loss: 0.5848 | Train Acc: 72.60% | Test Acc: 70.67%  Best Model
+  Epoch   6/50 | Loss: 0.5715 | Train Acc: 72.57% | Test Acc: 70.00%  (no improve 1/15)
+  Epoch   7/50 | Loss: 0.5618 | Train Acc: 74.14% | Test Acc: 70.00%  (no improve 2/15)
+  Epoch   8/50 | Loss: 0.5518 | Train Acc: 73.38% | Test Acc: 69.67%  (no improve 3/15)
+  Epoch   9/50 | Loss: 0.5415 | Train Acc: 76.38% | Test Acc: 71.00%  Best Model
+  Epoch  10/50 | Loss: 0.5337 | Train Acc: 73.40% | Test Acc: 68.33%  (no improve 1/15)
+   LR decay → LR baru: 0.000500
+  Epoch  11/50 | Loss: 0.5250 | Train Acc: 76.74% | Test Acc: 72.67%  Best Model
+  Epoch  12/50 | Loss: 0.5195 | Train Acc: 78.14% | Test Acc: 71.33%  (no improve 1/15)
+  Epoch  13/50 | Loss: 0.5143 | Train Acc: 75.88% | Test Acc: 71.00%  (no improve 2/15)
+  Epoch  14/50 | Loss: 0.5121 | Train Acc: 78.76% | Test Acc: 70.33%  (no improve 3/15)
+  Epoch  15/50 | Loss: 0.5081 | Train Acc: 76.98% | Test Acc: 70.67%  (no improve 4/15)
+  Epoch  16/50 | Loss: 0.5019 | Train Acc: 79.21% | Test Acc: 72.00%  (no improve 5/15)
+  Epoch  17/50 | Loss: 0.4988 | Train Acc: 74.69% | Test Acc: 70.00%  (no improve 6/15)
+  Epoch  18/50 | Loss: 0.4965 | Train Acc: 79.74% | Test Acc: 70.33%  (no improve 7/15)
+  Epoch  19/50 | Loss: 0.4909 | Train Acc: 79.83% | Test Acc: 71.00%  (no improve 8/15)
+  Epoch  20/50 | Loss: 0.4896 | Train Acc: 80.29% | Test Acc: 70.67%  (no improve 9/15)
+   LR decay → LR baru: 0.000250
+  Epoch  21/50 | Loss: 0.4846 | Train Acc: 79.79% | Test Acc: 71.00%  (no improve 10/15)
+  Epoch  22/50 | Loss: 0.4807 | Train Acc: 80.57% | Test Acc: 70.33%  (no improve 11/15)
+  Epoch  23/50 | Loss: 0.4792 | Train Acc: 80.62% | Test Acc: 71.00%  (no improve 12/15)
+  Epoch  24/50 | Loss: 0.4781 | Train Acc: 80.52% | Test Acc: 72.00%  (no improve 13/15)
+  Epoch  25/50 | Loss: 0.4768 | Train Acc: 80.74% | Test Acc: 72.00%  (no improve 14/15)
+  Epoch  26/50 | Loss: 0.4745 | Train Acc: 80.88% | Test Acc: 72.00%  (no improve 15/15)
+
+   Early stopping di epoch 26 (tidak ada peningkatan selama 15 epoch)
+
+   Bobot dikembalikan ke epoch terbaik: epoch 11 (Test Acc: 72.67%)
+
+   Hasil Akhir 1Conv-ReLU:
+     Best Epoch : 11/50
+     Train Acc  : 76.74%
+     Test Acc   : 72.67%
+     F1 Score   : 75.30%
+     Waktu      : 889.7 detik
+
+───────────────────────────────────────────────────────
+  Model 2/6 : 2Conv-ReLU
+  Conv layers : 2  |  Activation : relu
+───────────────────────────────────────────────────────
+  Epoch   1/50 | Loss: 0.6782 | Train Acc: 61.40% | Test Acc: 65.33%  Best Model
+  Epoch   2/50 | Loss: 0.6487 | Train Acc: 66.93% | Test Acc: 68.00%  Best Model
+  Epoch   3/50 | Loss: 0.6307 | Train Acc: 67.81% | Test Acc: 69.33%  Best Model
+  Epoch   4/50 | Loss: 0.6165 | Train Acc: 69.02% | Test Acc: 69.33%  (no improve 1/15)
+  Epoch   5/50 | Loss: 0.6044 | Train Acc: 71.86% | Test Acc: 72.67%  Best Model
+  Epoch   6/50 | Loss: 0.5926 | Train Acc: 73.62% | Test Acc: 73.67%  Best Model
+  Epoch   7/50 | Loss: 0.5784 | Train Acc: 74.43% | Test Acc: 74.00%  Best Model
+  Epoch   8/50 | Loss: 0.5665 | Train Acc: 75.45% | Test Acc: 74.33%  Best Model
+  Epoch   9/50 | Loss: 0.5559 | Train Acc: 74.90% | Test Acc: 74.00%  (no improve 1/15)
+  Epoch  10/50 | Loss: 0.5464 | Train Acc: 76.88% | Test Acc: 76.00%  Best Model
+   LR decay → LR baru: 0.000500
+  Epoch  11/50 | Loss: 0.5357 | Train Acc: 77.26% | Test Acc: 75.67%  (no improve 1/15)
+  Epoch  12/50 | Loss: 0.5320 | Train Acc: 77.86% | Test Acc: 75.33%  (no improve 2/15)
+  Epoch  13/50 | Loss: 0.5251 | Train Acc: 78.14% | Test Acc: 75.33%  (no improve 3/15)
+  Epoch  14/50 | Loss: 0.5217 | Train Acc: 78.52% | Test Acc: 75.67%  (no improve 4/15)
+  Epoch  15/50 | Loss: 0.5155 | Train Acc: 78.29% | Test Acc: 75.33%  (no improve 5/15)
+  Epoch  16/50 | Loss: 0.5128 | Train Acc: 78.83% | Test Acc: 75.67%  (no improve 6/15)
+  Epoch  17/50 | Loss: 0.5070 | Train Acc: 79.14% | Test Acc: 75.00%  (no improve 7/15)
+  Epoch  18/50 | Loss: 0.5041 | Train Acc: 79.17% | Test Acc: 75.67%  (no improve 8/15)
+  Epoch  19/50 | Loss: 0.4987 | Train Acc: 79.45% | Test Acc: 75.67%  (no improve 9/15)
+  Epoch  20/50 | Loss: 0.4949 | Train Acc: 79.33% | Test Acc: 76.33%  Best Model
+   LR decay → LR baru: 0.000250
+  Epoch  21/50 | Loss: 0.4903 | Train Acc: 79.79% | Test Acc: 74.67%  (no improve 1/15)
+  Epoch  22/50 | Loss: 0.4884 | Train Acc: 79.74% | Test Acc: 75.33%  (no improve 2/15)
+  Epoch  23/50 | Loss: 0.4851 | Train Acc: 79.86% | Test Acc: 76.00%  (no improve 3/15)
+  Epoch  24/50 | Loss: 0.4832 | Train Acc: 79.83% | Test Acc: 77.33%  Best Model
+  Epoch  25/50 | Loss: 0.4812 | Train Acc: 80.02% | Test Acc: 75.33%  (no improve 1/15)
+  Epoch  26/50 | Loss: 0.4779 | Train Acc: 80.00% | Test Acc: 75.00%  (no improve 2/15)
+  Epoch  27/50 | Loss: 0.4780 | Train Acc: 80.14% | Test Acc: 76.00%  (no improve 3/15)
+  Epoch  28/50 | Loss: 0.4740 | Train Acc: 80.24% | Test Acc: 76.33%  (no improve 4/15)
+  Epoch  29/50 | Loss: 0.4725 | Train Acc: 80.29% | Test Acc: 76.67%  (no improve 5/15)
+  Epoch  30/50 | Loss: 0.4709 | Train Acc: 80.60% | Test Acc: 77.33%  (no improve 6/15)
+   LR decay → LR baru: 0.000125
+  Epoch  31/50 | Loss: 0.4686 | Train Acc: 80.43% | Test Acc: 76.67%  (no improve 7/15)
+  Epoch  32/50 | Loss: 0.4665 | Train Acc: 80.48% | Test Acc: 76.00%  (no improve 8/15)
+  Epoch  33/50 | Loss: 0.4668 | Train Acc: 80.81% | Test Acc: 76.67%  (no improve 9/15)
+  Epoch  34/50 | Loss: 0.4644 | Train Acc: 80.69% | Test Acc: 77.00%  (no improve 10/15)
+  Epoch  35/50 | Loss: 0.4638 | Train Acc: 80.90% | Test Acc: 77.00%  (no improve 11/15)
+  Epoch  36/50 | Loss: 0.4642 | Train Acc: 80.50% | Test Acc: 77.00%  (no improve 12/15)
+  Epoch  37/50 | Loss: 0.4612 | Train Acc: 81.00% | Test Acc: 77.00%  (no improve 13/15)
+  Epoch  38/50 | Loss: 0.4607 | Train Acc: 80.76% | Test Acc: 77.00%  (no improve 14/15)
+  Epoch  39/50 | Loss: 0.4594 | Train Acc: 80.74% | Test Acc: 77.33%  (no improve 15/15)
+
+   Early stopping di epoch 39 (tidak ada peningkatan selama 15 epoch)
+
+   Bobot dikembalikan ke epoch terbaik: epoch 24 (Test Acc: 77.33%)
+
+   Hasil Akhir 2Conv-ReLU:
+     Best Epoch : 24/50
+     Train Acc  : 79.83%
+     Test Acc   : 77.33%
+     F1 Score   : 78.62%
+     Waktu      : 1963.4 detik
+
+───────────────────────────────────────────────────────
+  Model 3/6 : 3Conv-ReLU
+  Conv layers : 3  |  Activation : relu
+───────────────────────────────────────────────────────
+  Epoch   1/50 | Loss: 0.6668 | Train Acc: 62.31% | Test Acc: 63.00%  Best Model
+  Epoch   2/50 | Loss: 0.6524 | Train Acc: 63.14% | Test Acc: 65.67%  Best Model
+  Epoch   3/50 | Loss: 0.6440 | Train Acc: 65.40% | Test Acc: 67.33%  Best Model
+  Epoch   4/50 | Loss: 0.6354 | Train Acc: 66.40% | Test Acc: 67.67%  Best Model
+  Epoch   5/50 | Loss: 0.6266 | Train Acc: 67.69% | Test Acc: 67.67%  (no improve 1/15)
+  Epoch   6/50 | Loss: 0.6198 | Train Acc: 68.93% | Test Acc: 70.67%  Best Model
+  Epoch   7/50 | Loss: 0.6141 | Train Acc: 69.88% | Test Acc: 71.33%  Best Model
+  Epoch   8/50 | Loss: 0.6074 | Train Acc: 70.21% | Test Acc: 70.33%  (no improve 1/15)
+  Epoch   9/50 | Loss: 0.6020 | Train Acc: 71.36% | Test Acc: 72.67%  Best Model
+  Epoch  10/50 | Loss: 0.5955 | Train Acc: 71.74% | Test Acc: 74.33%  Best Model
+   LR decay → LR baru: 0.000500
+  Epoch  11/50 | Loss: 0.5904 | Train Acc: 72.43% | Test Acc: 73.67%  (no improve 1/15)
+  Epoch  12/50 | Loss: 0.5876 | Train Acc: 72.52% | Test Acc: 73.67%  (no improve 2/15)
+  Epoch  13/50 | Loss: 0.5859 | Train Acc: 72.69% | Test Acc: 73.33%  (no improve 3/15)
+  Epoch  14/50 | Loss: 0.5821 | Train Acc: 73.14% | Test Acc: 75.67%  Best Model
+  Epoch  15/50 | Loss: 0.5802 | Train Acc: 73.21% | Test Acc: 74.33%  (no improve 1/15)
+  Epoch  16/50 | Loss: 0.5752 | Train Acc: 73.43% | Test Acc: 73.67%  (no improve 2/15)
+  Epoch  17/50 | Loss: 0.5724 | Train Acc: 74.48% | Test Acc: 77.67%  Best Model
+  Epoch  18/50 | Loss: 0.5698 | Train Acc: 74.64% | Test Acc: 78.00%  Best Model
+  Epoch  19/50 | Loss: 0.5652 | Train Acc: 74.19% | Test Acc: 74.33%  (no improve 1/15)
+  Epoch  20/50 | Loss: 0.5607 | Train Acc: 75.07% | Test Acc: 77.00%  (no improve 2/15)
+   LR decay → LR baru: 0.000250
+  Epoch  21/50 | Loss: 0.5577 | Train Acc: 75.33% | Test Acc: 78.00%  (no improve 3/15)
+  Epoch  22/50 | Loss: 0.5548 | Train Acc: 75.52% | Test Acc: 78.33%  Best Model
+  Epoch  23/50 | Loss: 0.5525 | Train Acc: 75.60% | Test Acc: 78.33%  (no improve 1/15)
+  Epoch  24/50 | Loss: 0.5514 | Train Acc: 75.76% | Test Acc: 78.67%  Best Model
+  Epoch  25/50 | Loss: 0.5487 | Train Acc: 75.90% | Test Acc: 78.33%  (no improve 1/15)
+  Epoch  26/50 | Loss: 0.5464 | Train Acc: 76.07% | Test Acc: 77.33%  (no improve 2/15)
+  Epoch  27/50 | Loss: 0.5446 | Train Acc: 76.40% | Test Acc: 78.00%  (no improve 3/15)
+  Epoch  28/50 | Loss: 0.5422 | Train Acc: 76.31% | Test Acc: 78.00%  (no improve 4/15)
+  Epoch  29/50 | Loss: 0.5398 | Train Acc: 76.67% | Test Acc: 79.00%  Best Model
+  Epoch  30/50 | Loss: 0.5375 | Train Acc: 76.67% | Test Acc: 78.00%  (no improve 1/15)
+   LR decay → LR baru: 0.000125
+  Epoch  31/50 | Loss: 0.5363 | Train Acc: 76.71% | Test Acc: 77.33%  (no improve 2/15)
+  Epoch  32/50 | Loss: 0.5353 | Train Acc: 76.93% | Test Acc: 78.00%  (no improve 3/15)
+  Epoch  33/50 | Loss: 0.5338 | Train Acc: 77.05% | Test Acc: 77.67%  (no improve 4/15)
+  Epoch  34/50 | Loss: 0.5328 | Train Acc: 77.02% | Test Acc: 77.33%  (no improve 5/15)
+  Epoch  35/50 | Loss: 0.5310 | Train Acc: 77.10% | Test Acc: 77.33%  (no improve 6/15)
+  Epoch  36/50 | Loss: 0.5301 | Train Acc: 77.19% | Test Acc: 77.33%  (no improve 7/15)
+  Epoch  37/50 | Loss: 0.5297 | Train Acc: 77.17% | Test Acc: 77.67%  (no improve 8/15)
+  Epoch  38/50 | Loss: 0.5278 | Train Acc: 77.33% | Test Acc: 77.33%  (no improve 9/15)
+  Epoch  39/50 | Loss: 0.5266 | Train Acc: 77.38% | Test Acc: 77.33%  (no improve 10/15)
+  Epoch  40/50 | Loss: 0.5261 | Train Acc: 77.40% | Test Acc: 77.67%  (no improve 11/15)
+   LR decay → LR baru: 0.000063
+  Epoch  41/50 | Loss: 0.5242 | Train Acc: 77.38% | Test Acc: 77.67%  (no improve 12/15)
+  Epoch  42/50 | Loss: 0.5249 | Train Acc: 77.40% | Test Acc: 77.67%  (no improve 13/15)
+  Epoch  43/50 | Loss: 0.5243 | Train Acc: 77.45% | Test Acc: 77.33%  (no improve 14/15)
+  Epoch  44/50 | Loss: 0.5232 | Train Acc: 77.48% | Test Acc: 77.67%  (no improve 15/15)
+
+   Early stopping di epoch 44 (tidak ada peningkatan selama 15 epoch)
+
+   Bobot dikembalikan ke epoch terbaik: epoch 29 (Test Acc: 79.00%)
+
+   Hasil Akhir 3Conv-ReLU:
+     Best Epoch : 29/50
+     Train Acc  : 76.67%
+     Test Acc   : 79.00%
+     F1 Score   : 78.35%
+     Waktu      : 2775.2 detik
+
+───────────────────────────────────────────────────────
+  Model 4/6 : 1Conv-Sigmoid
+  Conv layers : 1  |  Activation : sigmoid
+───────────────────────────────────────────────────────
+  Epoch   1/50 | Loss: 0.7008 | Train Acc: 50.00% | Test Acc: 50.00%  Best Model
+  Epoch   2/50 | Loss: 0.6942 | Train Acc: 50.05% | Test Acc: 50.00%  (no improve 1/15)
+  Epoch   3/50 | Loss: 0.6925 | Train Acc: 50.10% | Test Acc: 49.67%  (no improve 2/15)
+  Epoch   4/50 | Loss: 0.6913 | Train Acc: 56.69% | Test Acc: 55.67%  Best Model
+  Epoch   5/50 | Loss: 0.6900 | Train Acc: 57.52% | Test Acc: 56.67%  Best Model
+  Epoch   6/50 | Loss: 0.6892 | Train Acc: 56.48% | Test Acc: 52.67%  (no improve 1/15)
+  Epoch   7/50 | Loss: 0.6881 | Train Acc: 55.14% | Test Acc: 57.33%  Best Model
+  Epoch   8/50 | Loss: 0.6874 | Train Acc: 58.33% | Test Acc: 54.67%  (no improve 1/15)
+  Epoch   9/50 | Loss: 0.6861 | Train Acc: 59.19% | Test Acc: 58.67%  Best Model
+  Epoch  10/50 | Loss: 0.6849 | Train Acc: 52.79% | Test Acc: 52.67%  (no improve 1/15)
+   LR decay → LR baru: 0.000500
+  Epoch  11/50 | Loss: 0.6844 | Train Acc: 58.93% | Test Acc: 56.33%  (no improve 2/15)
+  Epoch  12/50 | Loss: 0.6838 | Train Acc: 59.31% | Test Acc: 59.67%  Best Model
+  Epoch  13/50 | Loss: 0.6832 | Train Acc: 59.10% | Test Acc: 57.00%  (no improve 1/15)
+  Epoch  14/50 | Loss: 0.6828 | Train Acc: 59.33% | Test Acc: 56.67%  (no improve 2/15)
+  Epoch  15/50 | Loss: 0.6826 | Train Acc: 59.38% | Test Acc: 60.00%  Best Model
+  Epoch  16/50 | Loss: 0.6817 | Train Acc: 59.69% | Test Acc: 57.33%  (no improve 1/15)
+  Epoch  17/50 | Loss: 0.6816 | Train Acc: 59.62% | Test Acc: 60.33%  Best Model
+  Epoch  18/50 | Loss: 0.6814 | Train Acc: 59.69% | Test Acc: 58.33%  (no improve 1/15)
+  Epoch  19/50 | Loss: 0.6807 | Train Acc: 59.69% | Test Acc: 58.33%  (no improve 2/15)
+  Epoch  20/50 | Loss: 0.6805 | Train Acc: 59.81% | Test Acc: 59.00%  (no improve 3/15)
+   LR decay → LR baru: 0.000250
+  Epoch  21/50 | Loss: 0.6801 | Train Acc: 59.93% | Test Acc: 60.00%  (no improve 4/15)
+  Epoch  22/50 | Loss: 0.6796 | Train Acc: 60.07% | Test Acc: 57.67%  (no improve 5/15)
+  Epoch  23/50 | Loss: 0.6797 | Train Acc: 59.95% | Test Acc: 59.00%  (no improve 6/15)
+  Epoch  24/50 | Loss: 0.6795 | Train Acc: 60.21% | Test Acc: 56.33%  (no improve 7/15)
+  Epoch  25/50 | Loss: 0.6792 | Train Acc: 60.02% | Test Acc: 58.00%  (no improve 8/15)
+  Epoch  26/50 | Loss: 0.6789 | Train Acc: 60.17% | Test Acc: 58.00%  (no improve 9/15)
+  Epoch  27/50 | Loss: 0.6790 | Train Acc: 60.17% | Test Acc: 58.33%  (no improve 10/15)
+  Epoch  28/50 | Loss: 0.6786 | Train Acc: 60.31% | Test Acc: 58.33%  (no improve 11/15)
+  Epoch  29/50 | Loss: 0.6783 | Train Acc: 60.29% | Test Acc: 58.33%  (no improve 12/15)
+  Epoch  30/50 | Loss: 0.6783 | Train Acc: 60.33% | Test Acc: 58.33%  (no improve 13/15)
+   LR decay → LR baru: 0.000125
+  Epoch  31/50 | Loss: 0.6780 | Train Acc: 60.29% | Test Acc: 58.33%  (no improve 14/15)
+  Epoch  32/50 | Loss: 0.6780 | Train Acc: 60.33% | Test Acc: 58.33%  (no improve 15/15)
+
+   Early stopping di epoch 32 (tidak ada peningkatan selama 15 epoch)
+
+   Bobot dikembalikan ke epoch terbaik: epoch 17 (Test Acc: 60.33%)
+
+   Hasil Akhir 1Conv-Sigmoid:
+     Best Epoch : 17/50
+     Train Acc  : 59.62%
+     Test Acc   : 60.33%
+     F1 Score   : 54.41%
+     Waktu      : 1463.2 detik
+
+───────────────────────────────────────────────────────
+  Model 5/6 : 2Conv-Sigmoid
+  Conv layers : 2  |  Activation : sigmoid
+───────────────────────────────────────────────────────
+  Epoch   1/50 | Loss: 0.6951 | Train Acc: 49.88% | Test Acc: 50.33%  Best Model
+  Epoch   2/50 | Loss: 0.6939 | Train Acc: 47.76% | Test Acc: 46.67%  (no improve 1/15)
+  Epoch   3/50 | Loss: 0.6937 | Train Acc: 50.00% | Test Acc: 50.00%  (no improve 2/15)
+  Epoch   4/50 | Loss: 0.6937 | Train Acc: 50.02% | Test Acc: 50.00%  (no improve 3/15)
+  Epoch   5/50 | Loss: 0.6937 | Train Acc: 50.14% | Test Acc: 50.00%  (no improve 4/15)
+  Epoch   6/50 | Loss: 0.6936 | Train Acc: 49.98% | Test Acc: 50.00%  (no improve 5/15)
+  Epoch   7/50 | Loss: 0.6934 | Train Acc: 49.98% | Test Acc: 50.00%  (no improve 6/15)
+  Epoch   8/50 | Loss: 0.6936 | Train Acc: 52.02% | Test Acc: 51.67%  Best Model
+  Epoch   9/50 | Loss: 0.6936 | Train Acc: 50.50% | Test Acc: 50.00%  (no improve 1/15)
+  Epoch  10/50 | Loss: 0.6934 | Train Acc: 49.76% | Test Acc: 50.33%  (no improve 2/15)
+   LR decay → LR baru: 0.000500
+  Epoch  11/50 | Loss: 0.6930 | Train Acc: 51.57% | Test Acc: 50.00%  (no improve 3/15)
+  Epoch  12/50 | Loss: 0.6929 | Train Acc: 49.76% | Test Acc: 50.00%  (no improve 4/15)
+  Epoch  13/50 | Loss: 0.6929 | Train Acc: 49.79% | Test Acc: 50.33%  (no improve 5/15)
+  Epoch  14/50 | Loss: 0.6929 | Train Acc: 55.74% | Test Acc: 55.33%  Best Model
+  Epoch  15/50 | Loss: 0.6929 | Train Acc: 56.00% | Test Acc: 54.33%  (no improve 1/15)
+  Epoch  16/50 | Loss: 0.6929 | Train Acc: 53.88% | Test Acc: 53.33%  (no improve 2/15)
+  Epoch  17/50 | Loss: 0.6928 | Train Acc: 52.76% | Test Acc: 51.67%  (no improve 3/15)
+  Epoch  18/50 | Loss: 0.6927 | Train Acc: 49.76% | Test Acc: 51.00%  (no improve 4/15)
+  Epoch  19/50 | Loss: 0.6926 | Train Acc: 49.98% | Test Acc: 50.00%  (no improve 5/15)
+  Epoch  20/50 | Loss: 0.6927 | Train Acc: 57.31% | Test Acc: 55.33%  (no improve 6/15)
+   LR decay → LR baru: 0.000250
+  Epoch  21/50 | Loss: 0.6925 | Train Acc: 49.93% | Test Acc: 50.67%  (no improve 7/15)
+  Epoch  22/50 | Loss: 0.6926 | Train Acc: 55.88% | Test Acc: 52.67%  (no improve 8/15)
+  Epoch  23/50 | Loss: 0.6925 | Train Acc: 49.95% | Test Acc: 50.67%  (no improve 9/15)
+  Epoch  24/50 | Loss: 0.6924 | Train Acc: 50.02% | Test Acc: 50.00%  (no improve 10/15)
+  Epoch  25/50 | Loss: 0.6925 | Train Acc: 57.64% | Test Acc: 56.67%  Best Model
+  Epoch  26/50 | Loss: 0.6925 | Train Acc: 57.45% | Test Acc: 54.67%  (no improve 1/15)
+  Epoch  27/50 | Loss: 0.6925 | Train Acc: 56.40% | Test Acc: 53.33%  (no improve 2/15)
+  Epoch  28/50 | Loss: 0.6925 | Train Acc: 58.10% | Test Acc: 56.67%  (no improve 3/15)
+  Epoch  29/50 | Loss: 0.6924 | Train Acc: 52.40% | Test Acc: 54.33%  (no improve 4/15)
+  Epoch  30/50 | Loss: 0.6925 | Train Acc: 57.95% | Test Acc: 55.67%  (no improve 5/15)
+   LR decay → LR baru: 0.000125
+  Epoch  31/50 | Loss: 0.6924 | Train Acc: 57.83% | Test Acc: 58.00%  Best Model
+  Epoch  32/50 | Loss: 0.6923 | Train Acc: 52.64% | Test Acc: 54.00%  (no improve 1/15)
+  Epoch  33/50 | Loss: 0.6923 | Train Acc: 53.29% | Test Acc: 53.00%  (no improve 2/15)
+  Epoch  34/50 | Loss: 0.6923 | Train Acc: 58.95% | Test Acc: 59.00%  Best Model
+  Epoch  35/50 | Loss: 0.6923 | Train Acc: 58.17% | Test Acc: 55.00%  (no improve 1/15)
+  Epoch  36/50 | Loss: 0.6923 | Train Acc: 58.67% | Test Acc: 55.33%  (no improve 2/15)
+  Epoch  37/50 | Loss: 0.6923 | Train Acc: 57.38% | Test Acc: 57.67%  (no improve 3/15)
+  Epoch  38/50 | Loss: 0.6923 | Train Acc: 57.71% | Test Acc: 54.67%  (no improve 4/15)
+  Epoch  39/50 | Loss: 0.6923 | Train Acc: 57.40% | Test Acc: 54.33%  (no improve 5/15)
+  Epoch  40/50 | Loss: 0.6923 | Train Acc: 59.24% | Test Acc: 60.33%  Best Model
+   LR decay → LR baru: 0.000063
+  Epoch  41/50 | Loss: 0.6922 | Train Acc: 59.60% | Test Acc: 61.00%  Best Model
+  Epoch  42/50 | Loss: 0.6922 | Train Acc: 59.76% | Test Acc: 61.33%  Best Model
+  Epoch  43/50 | Loss: 0.6922 | Train Acc: 59.50% | Test Acc: 59.67%  (no improve 1/15)
+  Epoch  44/50 | Loss: 0.6922 | Train Acc: 58.36% | Test Acc: 58.67%  (no improve 2/15)
+  Epoch  45/50 | Loss: 0.6922 | Train Acc: 60.17% | Test Acc: 61.67%  Best Model
+  Epoch  46/50 | Loss: 0.6922 | Train Acc: 59.98% | Test Acc: 60.67%  (no improve 1/15)
+  Epoch  47/50 | Loss: 0.6922 | Train Acc: 59.17% | Test Acc: 57.00%  (no improve 2/15)
+  Epoch  48/50 | Loss: 0.6922 | Train Acc: 59.24% | Test Acc: 56.33%  (no improve 3/15)
+  Epoch  49/50 | Loss: 0.6922 | Train Acc: 59.43% | Test Acc: 58.00%  (no improve 4/15)
+  Epoch  50/50 | Loss: 0.6922 | Train Acc: 59.57% | Test Acc: 58.67%  (no improve 5/15)
+
+   Bobot dikembalikan ke epoch terbaik: epoch 45 (Test Acc: 61.67%)
+
+   Hasil Akhir 2Conv-Sigmoid:
+     Best Epoch : 45/50
+     Train Acc  : 60.17%
+     Test Acc   : 61.67%
+     F1 Score   : 64.40%
+     Waktu      : 3886.8 detik
+
+───────────────────────────────────────────────────────
+  Model 6/6 : 3Conv-Sigmoid
+  Conv layers : 3  |  Activation : sigmoid
+───────────────────────────────────────────────────────
+  Epoch   1/50 | Loss: 0.7024 | Train Acc: 50.00% | Test Acc: 50.00%  Best Model
+  Epoch   2/50 | Loss: 0.6934 | Train Acc: 53.19% | Test Acc: 56.00%  Best Model
+  Epoch   3/50 | Loss: 0.6933 | Train Acc: 51.38% | Test Acc: 52.00%  (no improve 1/15)
+  Epoch   4/50 | Loss: 0.6932 | Train Acc: 50.00% | Test Acc: 50.00%  (no improve 2/15)
+  Epoch   5/50 | Loss: 0.6932 | Train Acc: 49.98% | Test Acc: 50.00%  (no improve 3/15)
+  Epoch   6/50 | Loss: 0.6934 | Train Acc: 50.00% | Test Acc: 50.00%  (no improve 4/15)
+  Epoch   7/50 | Loss: 0.6933 | Train Acc: 50.00% | Test Acc: 50.00%  (no improve 5/15)
+  Epoch   8/50 | Loss: 0.6933 | Train Acc: 50.00% | Test Acc: 50.00%  (no improve 6/15)
+  Epoch   9/50 | Loss: 0.6932 | Train Acc: 49.98% | Test Acc: 50.00%  (no improve 7/15)
+  Epoch  10/50 | Loss: 0.6932 | Train Acc: 50.00% | Test Acc: 50.00%  (no improve 8/15)
+   LR decay → LR baru: 0.000500
+  Epoch  11/50 | Loss: 0.6932 | Train Acc: 49.98% | Test Acc: 50.00%  (no improve 9/15)
+  Epoch  12/50 | Loss: 0.6931 | Train Acc: 54.17% | Test Acc: 57.33%  Best Model
+  Epoch  13/50 | Loss: 0.6931 | Train Acc: 50.86% | Test Acc: 51.67%  (no improve 1/15)
+  Epoch  14/50 | Loss: 0.6932 | Train Acc: 50.12% | Test Acc: 50.00%  (no improve 2/15)
+  Epoch  15/50 | Loss: 0.6932 | Train Acc: 53.33% | Test Acc: 55.67%  (no improve 3/15)
+  Epoch  16/50 | Loss: 0.6931 | Train Acc: 50.00% | Test Acc: 50.00%  (no improve 4/15)
+  Epoch  17/50 | Loss: 0.6931 | Train Acc: 50.12% | Test Acc: 50.33%  (no improve 5/15)
+  Epoch  18/50 | Loss: 0.6931 | Train Acc: 50.10% | Test Acc: 50.00%  (no improve 6/15)
+  Epoch  19/50 | Loss: 0.6931 | Train Acc: 50.00% | Test Acc: 50.00%  (no improve 7/15)
+  Epoch  20/50 | Loss: 0.6932 | Train Acc: 50.00% | Test Acc: 50.00%  (no improve 8/15)
+   LR decay → LR baru: 0.000250
+  Epoch  21/50 | Loss: 0.6931 | Train Acc: 50.00% | Test Acc: 50.00%  (no improve 9/15)
+  Epoch  22/50 | Loss: 0.6931 | Train Acc: 50.14% | Test Acc: 50.33%  (no improve 10/15)
+  Epoch  23/50 | Loss: 0.6931 | Train Acc: 51.76% | Test Acc: 53.33%  (no improve 11/15)
+  Epoch  24/50 | Loss: 0.6931 | Train Acc: 51.74% | Test Acc: 53.67%  (no improve 12/15)
+  Epoch  25/50 | Loss: 0.6930 | Train Acc: 50.76% | Test Acc: 51.33%  (no improve 13/15)
+  Epoch  26/50 | Loss: 0.6931 | Train Acc: 50.10% | Test Acc: 50.00%  (no improve 14/15)
+  Epoch  27/50 | Loss: 0.6931 | Train Acc: 52.26% | Test Acc: 52.67%  (no improve 15/15)
+
+   Early stopping di epoch 27 (tidak ada peningkatan selama 15 epoch)
+
+   Bobot dikembalikan ke epoch terbaik: epoch 12 (Test Acc: 57.33%)
+
+   Hasil Akhir 3Conv-Sigmoid:
+     Best Epoch : 12/50
+     Train Acc  : 54.17%
+     Test Acc   : 57.33%
+     F1 Score   : 60.74%
+     Waktu      : 1835.5 detik
+
+═══════════════════════════════════════════════════════
+  MENYIMPAN HASIL & GRAFIK
+═══════════════════════════════════════════════════════
+   Tersimpan: hasil_eksperimen\grafik_akurasi.png
+   Tersimpan: hasil_eksperimen\grafik_loss.png
+   Tersimpan: hasil_eksperimen\grafik_confusion.png
+   Tersimpan: hasil_eksperimen\grafik_perbandingan.png
+
+=====================================================================================
+  TABEL PERBANDINGAN HASIL EKSPERIMEN TRAINING 6 KOMBINASI MODEL CNN
+=====================================================================================
+Model               Train Acc   Test Acc  Precision   Recall       F1      Waktu
+-------------------------------------------------------------------------------------
+1Conv-ReLU             80.88%     72.67%     68.68%   83.33%   75.30%    889.7s
+2Conv-ReLU             80.74%     77.33%     74.40%   83.33%   78.62%   1963.4s
+3Conv-ReLU             77.48%     79.00%     80.85%   76.00%   78.35%   2775.2s
+1Conv-Sigmoid          60.33%     60.33%     63.96%   47.33%   54.41%   1463.2s
+2Conv-Sigmoid          59.57%     61.67%     60.12%   69.33%   64.40%   3886.8s
+3Conv-Sigmoid          52.26%     57.33%     56.25%   66.00%   60.74%   1835.5s
+
+
+═══════════════════════════════════════════════════════
+  HASIL AKHIR
+═══════════════════════════════════════════════════════
+  Best Epoch : 30/50
+  Train Acc  : 75.67%
+  Test Acc   : 79.00%
+  Precision  : 81.29%
+  Recall     : 75.33%
+  F1 Score   : 78.20%
+  Waktu      : 1844.5 detik
+
+ Menyimpan bobot model Terbaik
+  Bobot tersimpan    : model_terbaik\bobot_3conv_relu.npy
+  Konfigurasi simpan : model_terbaik\config_model.npy
+

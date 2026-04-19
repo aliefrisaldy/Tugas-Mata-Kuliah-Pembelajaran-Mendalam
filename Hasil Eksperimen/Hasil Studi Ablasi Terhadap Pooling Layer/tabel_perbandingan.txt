@@ -1,0 +1,15 @@
+===============================================================================================
+  TABEL PERBANDINGAN HASIL ABLASI POOLING LAYER (3Conv-ReLU)
+===============================================================================================
+Model                           Train Acc   Test Acc  Precision   Recall       F1   Best Epoch      Waktu
+-----------------------------------------------------------------------------------------------
+3Conv-ReLU-WithPooling             77.48%     79.00%     80.85%   76.00%   78.35%           29   2775.2s
+3Conv-ReLU-WithoutPooling          96.67%     75.67%     75.50%   76.00%   75.75%           48   8705.3s
+===============================================================================================
+
+ KESIMPULAN ABLASI:
+   With Pooling    - Test Acc : 79.00%  |  F1 : 78.35%  |  Waktu : 2775.2s
+   Without Pooling - Test Acc : 75.67%  |  F1 : 75.75%  |  Waktu : 8705.3s
+   Selisih Akurasi  : 3.33% (With Pooling lebih baik)
+   Selisih F1 Score : 2.60% (With Pooling lebih baik)
+   Selisih Waktu    : 5930.1s (Without Pooling lebih lambat)

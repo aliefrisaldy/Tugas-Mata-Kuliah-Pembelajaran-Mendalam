@@ -1,0 +1,123 @@
+============================================================
+  ABLASI POOLING LAYER - MODEL TERBAIK (3Conv-ReLU)
+============================================================
+ Loading hasil eksperimen sebelumnya...
+  Ditemukan: 3Conv-ReLU → Test Acc: 79.00%
+ Loading dataset...
+  X_train : (4200, 64, 64, 3)  |  y_train : (4200,)
+  X_test  : (300, 64, 64, 3)   |  y_test  : (300,)
+
+────────────────────────────────────────────────────────────
+  Training : 3Conv-ReLU-WithoutPooling
+  Pooling  : OFF
+────────────────────────────────────────────────────────────
+  Epoch   1/50 | Loss: 0.6473 | Train Acc: 73.00% | Test Acc: 66.67%    best
+  Epoch   2/50 | Loss: 0.5892 | Train Acc: 77.33% | Test Acc: 68.67%    best
+  Epoch   3/50 | Loss: 0.5578 | Train Acc: 79.33% | Test Acc: 70.00%    best
+  Epoch   4/50 | Loss: 0.5342 | Train Acc: 54.00% | Test Acc: 55.33%  (no improve 1/15)
+  Epoch   5/50 | Loss: 0.5093 | Train Acc: 75.00% | Test Acc: 64.67%  (no improve 2/15)
+  Epoch   6/50 | Loss: 0.4785 | Train Acc: 85.00% | Test Acc: 70.33%    best
+  Epoch   7/50 | Loss: 0.4561 | Train Acc: 79.67% | Test Acc: 65.33%  (no improve 1/15)
+  Epoch   8/50 | Loss: 0.4325 | Train Acc: 85.33% | Test Acc: 69.67%  (no improve 2/15)
+  Epoch   9/50 | Loss: 0.4066 | Train Acc: 60.33% | Test Acc: 55.33%  (no improve 3/15)
+  Epoch  10/50 | Loss: 0.3875 | Train Acc: 86.33% | Test Acc: 71.67%    best
+   LR decay → LR baru: 0.000500
+  Epoch  11/50 | Loss: 0.3531 | Train Acc: 88.67% | Test Acc: 71.67%  (no improve 1/15)
+  Epoch  12/50 | Loss: 0.3375 | Train Acc: 87.67% | Test Acc: 69.00%  (no improve 2/15)
+  Epoch  13/50 | Loss: 0.3284 | Train Acc: 88.00% | Test Acc: 72.67%    best
+  Epoch  14/50 | Loss: 0.3119 | Train Acc: 85.67% | Test Acc: 70.00%  (no improve 1/15)
+  Epoch  15/50 | Loss: 0.3021 | Train Acc: 91.67% | Test Acc: 69.67%  (no improve 2/15)
+  Epoch  16/50 | Loss: 0.2932 | Train Acc: 88.33% | Test Acc: 71.00%  (no improve 3/15)
+  Epoch  17/50 | Loss: 0.2914 | Train Acc: 63.00% | Test Acc: 59.33%  (no improve 4/15)
+  Epoch  18/50 | Loss: 0.2796 | Train Acc: 94.67% | Test Acc: 70.33%  (no improve 5/15)
+  Epoch  19/50 | Loss: 0.2666 | Train Acc: 94.00% | Test Acc: 70.33%  (no improve 6/15)
+  Epoch  20/50 | Loss: 0.2480 | Train Acc: 91.67% | Test Acc: 71.33%  (no improve 7/15)
+   LR decay → LR baru: 0.000250
+  Epoch  21/50 | Loss: 0.2320 | Train Acc: 92.67% | Test Acc: 71.00%  (no improve 8/15)
+  Epoch  22/50 | Loss: 0.2262 | Train Acc: 93.00% | Test Acc: 71.67%  (no improve 9/15)
+  Epoch  23/50 | Loss: 0.2211 | Train Acc: 90.00% | Test Acc: 71.00%  (no improve 10/15)
+  Epoch  24/50 | Loss: 0.2112 | Train Acc: 95.33% | Test Acc: 72.33%  (no improve 11/15)
+  Epoch  25/50 | Loss: 0.2118 | Train Acc: 92.67% | Test Acc: 70.67%  (no improve 12/15)
+  Epoch  26/50 | Loss: 0.2059 | Train Acc: 92.00% | Test Acc: 73.33%    best
+  Epoch  27/50 | Loss: 0.2017 | Train Acc: 94.67% | Test Acc: 73.33%  (no improve 1/15)
+  Epoch  28/50 | Loss: 0.1961 | Train Acc: 92.00% | Test Acc: 73.00%  (no improve 2/15)
+  Epoch  29/50 | Loss: 0.1907 | Train Acc: 96.67% | Test Acc: 73.67%    best
+  Epoch  30/50 | Loss: 0.1862 | Train Acc: 95.00% | Test Acc: 72.67%  (no improve 1/15)
+   LR decay → LR baru: 0.000125
+  Epoch  31/50 | Loss: 0.1781 | Train Acc: 96.00% | Test Acc: 73.00%  (no improve 2/15)
+  Epoch  32/50 | Loss: 0.1764 | Train Acc: 94.00% | Test Acc: 73.67%  (no improve 3/15)
+  Epoch  33/50 | Loss: 0.1749 | Train Acc: 97.67% | Test Acc: 74.33%    best
+  Epoch  34/50 | Loss: 0.1716 | Train Acc: 95.00% | Test Acc: 72.67%  (no improve 1/15)
+  Epoch  35/50 | Loss: 0.1687 | Train Acc: 95.00% | Test Acc: 75.00%    best
+  Epoch  36/50 | Loss: 0.1671 | Train Acc: 95.67% | Test Acc: 74.33%  (no improve 1/15)
+  Epoch  37/50 | Loss: 0.1648 | Train Acc: 95.67% | Test Acc: 75.00%  (no improve 2/15)
+  Epoch  38/50 | Loss: 0.1629 | Train Acc: 96.67% | Test Acc: 74.00%  (no improve 3/15)
+  Epoch  39/50 | Loss: 0.1619 | Train Acc: 97.33% | Test Acc: 73.67%  (no improve 4/15)
+  Epoch  40/50 | Loss: 0.1593 | Train Acc: 93.33% | Test Acc: 73.33%  (no improve 5/15)
+   LR decay → LR baru: 0.000063
+  Epoch  41/50 | Loss: 0.1554 | Train Acc: 96.33% | Test Acc: 74.67%  (no improve 6/15)
+  Epoch  42/50 | Loss: 0.1541 | Train Acc: 95.33% | Test Acc: 75.00%  (no improve 7/15)
+  Epoch  43/50 | Loss: 0.1550 | Train Acc: 97.33% | Test Acc: 74.00%  (no improve 8/15)
+  Epoch  44/50 | Loss: 0.1528 | Train Acc: 97.33% | Test Acc: 75.00%  (no improve 9/15)
+  Epoch  45/50 | Loss: 0.1522 | Train Acc: 96.33% | Test Acc: 75.00%  (no improve 10/15)
+  Epoch  46/50 | Loss: 0.1508 | Train Acc: 96.33% | Test Acc: 74.67%  (no improve 11/15)
+  Epoch  47/50 | Loss: 0.1502 | Train Acc: 95.33% | Test Acc: 75.00%  (no improve 12/15)
+  Epoch  48/50 | Loss: 0.1485 | Train Acc: 98.00% | Test Acc: 75.67%    best
+  Epoch  49/50 | Loss: 0.1477 | Train Acc: 96.67% | Test Acc: 75.00%  (no improve 1/15)
+  Epoch  50/50 | Loss: 0.1461 | Train Acc: 96.67% | Test Acc: 74.67%  (no improve 2/15)
+
+   Bobot dikembalikan ke epoch terbaik: epoch 48 (Test Acc: 75.67%)
+
+   Hasil Akhir 3Conv-ReLU-WithoutPooling:
+     Best Epoch : 48/50
+     Train Acc  : 98.00%
+     Test Acc   : 75.67%
+     F1 Score   : 75.75%
+     Waktu      : 8705.3 detik
+
+════════════════════════════════════════════════════════════
+  MENYIMPAN HASIL & GRAFIK
+════════════════════════════════════════════════════════════
+   Tersimpan: hasil_ablasi_pooling\grafik_akurasi.png
+   Tersimpan: hasil_ablasi_pooling\grafik_loss.png
+   Tersimpan: hasil_ablasi_pooling\grafik_confusion.png
+   Tersimpan: hasil_ablasi_pooling\grafik_perbandingan.png
+
+===============================================================================================
+  TABEL PERBANDINGAN HASIL ABLASI POOLING LAYER (3Conv-ReLU)
+===============================================================================================
+Model                           Train Acc   Test Acc  Precision   Recall       F1   Best Epoch      Waktu
+-----------------------------------------------------------------------------------------------
+3Conv-ReLU-WithPooling             77.48%     79.00%     80.85%   76.00%   78.35%           29   2775.2s
+3Conv-ReLU-WithoutPooling          96.67%     75.67%     75.50%   76.00%   75.75%           48   8705.3s
+===============================================================================================
+
+ KESIMPULAN ABLASI:
+   With Pooling    - Test Acc : 79.00%  |  F1 : 78.35%  |  Waktu : 2775.2s
+   Without Pooling - Test Acc : 75.67%  |  F1 : 75.75%  |  Waktu : 8705.3s
+   Selisih Akurasi  : 3.33% (With Pooling lebih baik)
+   Selisih F1 Score : 2.60% (With Pooling lebih baik)
+   Selisih Waktu    : 5930.1s (Without Pooling lebih lambat)
+
+   Tersimpan: hasil_ablasi_pooling\tabel_perbandingan.txt
+
+ Semua eksperimen ablasi selesai!
+   Selisih F1 Score : 2.60% (With Pooling lebih baik)
+   Selisih Waktu    : 5930.1s (Without Pooling lebih lambat)
+
+   Tersimpan: hasil_ablasi_pooling\tabel_perbandingan.txt
+
+ Semua eksperimen ablasi selesai!
+
+   Tersimpan: hasil_ablasi_pooling\tabel_perbandingan.txt
+
+ Semua eksperimen ablasi selesai!
+   Tersimpan: hasil_ablasi_pooling\tabel_perbandingan.txt
+
+ Semua eksperimen ablasi selesai!
+
+ Semua eksperimen ablasi selesai!
+   Output tersimpan di folder: hasil_ablasi_pooling/
+ Semua eksperimen ablasi selesai!
+   Output tersimpan di folder: hasil_ablasi_pooling/
+   Output tersimpan di folder: hasil_ablasi_pooling/
