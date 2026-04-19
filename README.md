@@ -1,13 +1,7 @@
 # Tugas-Mata-Kuliah-Pembelajaran-Mendalam
 # 🚗🏍️ Klasifikasi Mobil vs Motor menggunakan CNN from Scratch
 
-> **Tugas Akhir Mata Kuliah Pembelajaran Mendalam**  
-> Program Studi Informatika — Universitas Tadulako  
-> Kelompok 3
-
----
-
-## 👥 Anggota Kelompok
+## 👥 Anggota Kelompok 3
 
 | Nama | NIM |
 |------|-----|
