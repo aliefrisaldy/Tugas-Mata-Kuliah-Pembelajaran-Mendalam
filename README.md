@@ -1,7 +1,9 @@
-# Tugas-Mata-Kuliah-Pembelajaran-Mendalam
 # 🚗🏍️ Klasifikasi Mobil vs Motor menggunakan CNN from Scratch
 
-## 👥 Anggota Kelompok 3
+> **Tugas Akhir Mata Kuliah Pembelajaran Mendalam**  
+> Program Studi Informatika — Universitas Tadulako  
+
+## 👥 Kelompok 3
 
 | Nama | NIM |
 |------|-----|
@@ -46,30 +48,41 @@ Output (0=Mobil, 1=Motor)
 ```
 Tugas_MKPM_Kelompok3/
 │
-├── source_code/
-│     ├── Arsitektur_CNN.py      ← Implementasi CNN (semua komponen)
-│     ├── 1_scraping.py          ← Scraping dataset dari Google & Bing
-│     ├── 2_preprocessing.py     ← Resize + split train/test + simpan .npy
-│     ├── 3_augmentasi.py        ← Augmentasi data training
-│     └── 5_eksperimen.py        ← Training 6 kombinasi model + evaluasi
+├── Source Code/
+│     ├── Arsitektur_CNN.py              ← Implementasi CNN (semua komponen)
+│     ├── Scraping.py                    ← Scraping dataset dari Google & Bing
+│     ├── Preprocessing.py               ← Resize + split train/test + simpan .npy
+│     ├── Augmentasi.py                  ← Augmentasi data training
+│     ├── Train_6_Kombinasi_Model.py     ← Training 6 kombinasi model + evaluasi
+│     └── Studi_Ablasi_Tanpa_Pooling.py  ← Studi ablasi pengaruh pooling layer
 │
-├── demo_aplikasi/
-│     ├── 7_demo.py              ← Aplikasi prediksi gambar
-│     ├── model_terbaik/
-│     │     ├── bobot_3conv_relu.npy   ← Bobot model terbaik
-│     │     └── config_model.npy       ← Konfigurasi model
+├── Demo Aplikasi/
+│     ├── Demo.py                        ← Aplikasi prediksi gambar
 │     └── hasil_prediksi/
 │           ├── hasil_prediksi_1.png
 │           ├── hasil_prediksi_2.png
 │           ├── hasil_prediksi_3.png
 │           └── hasil_prediksi_4.png
 │
-├── dataset/
-│     ├── mobil/                 ← 500 gambar mobil
-│     └── motor/                 ← 500 gambar motor
+├── Model Terbaik/
+│     ├── bobot_3conv_relu.npy           ← Bobot model terbaik
+│     └── config_model.npy              ← Konfigurasi model
 │
-├── laporan.pdf
-├── slide.pptx
+├── Dataset/
+│     ├── mobil/                         ← 500 gambar mobil
+│     └── motor/                         ← 500 gambar motor
+│
+├── Hasil Eksperimen/
+│     ├── grafik_akurasi.png
+│     ├── grafik_loss.png
+│     ├── grafik_confusion.png
+│     ├── grafik_perbandingan.png
+│     └── tabel_perbandingan.txt
+│
+├── Laporan dan Slide Presentasi/
+│     ├── Laporan.pdf
+│     └── Slide.pptx
+│
 └── README.md
 ```
 
@@ -108,22 +121,27 @@ pip install numpy Pillow matplotlib icrawler
 
 ```bash
 # Step 1 - Scraping dataset (opsional, dataset sudah tersedia)
-python 1_scraping.py
+python Scraping.py
 
 # Step 2 - Preprocessing: resize + split 70/30
-python 2_preprocessing.py
+python Preprocessing.py
 
 # Step 3 - Augmentasi data training (6x lipat)
-python 3_augmentasi.py
+python Augmentasi.py
 
 # Step 4 - Training 6 kombinasi model + simpan hasil
-python 5_eksperimen.py
+python Train_6_Kombinasi_Model.py
 ```
 
-### 4. Jalankan Demo Aplikasi
+### 4. Jalankan Studi Ablasi Tambahan (Opsional)
 ```bash
-cd ../demo_aplikasi
-python 7_demo.py
+python Studi_Ablasi_Tanpa_Pooling.py
+```
+
+### 5. Jalankan Demo Aplikasi
+```bash
+cd ../Demo\ Aplikasi
+python Demo.py
 ```
 
 ---
