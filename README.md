@@ -8,7 +8,7 @@
 | Nama | NIM |
 |------|-----|
 | Muhammad Alif Risaldy | F55123055 |
-| Isti Zahra Eka Putri Katili | F55123029 |
+| Isti Zahra Eka Putri Katili | F55123090 |
 | Reyhan Dany A.H. Mohammad | F55123095 |
 
 ---
