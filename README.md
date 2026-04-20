@@ -1,6 +1,6 @@
 # 🚗🏍️ Klasifikasi Mobil vs Motor menggunakan CNN from Scratch
 
-> **Tugas Akhir Mata Kuliah Pembelajaran Mendalam**  
+> **Tugas Mata Kuliah Pembelajaran Mendalam**  
 > Program Studi Informatika — Universitas Tadulako  
 
 ## 👥 Kelompok 3
@@ -17,9 +17,11 @@
 
 Proyek ini mengimplementasikan **Convolutional Neural Network (CNN) dari nol** menggunakan Python dan NumPy **tanpa framework deep learning** seperti PyTorch, Keras, maupun TensorFlow. Model digunakan untuk melakukan **klasifikasi biner** antara dua kelas kendaraan yaitu **mobil** dan **motor**.
 
-Eksperimen dirancang dalam bentuk **studi ablasi** dengan membandingkan 6 kombinasi model berdasarkan:
+Eksperimen dilakukan dengan membandingkan 6 kombinasi model berdasarkan:
 - Jumlah convolutional layer: **1, 2, dan 3 layer**
 - Fungsi aktivasi: **ReLU dan Sigmoid**
+
+Selain itu, dilakukan **studi ablasi** tambahan terhadap pengaruh pooling layer pada model terbaik, serta pengembangan **Demo Aplikasi** prediksi berbasis model terbaik hasil eksperimen.
 
 ---
 
@@ -133,7 +135,7 @@ python Augmentasi.py
 python Train_6_Kombinasi_Model.py
 ```
 
-### 4. Jalankan Studi Ablasi Tambahan (Opsional)
+### 4. Jalankan Studi Ablasi 
 ```bash
 python Studi_Ablasi_Tanpa_Pooling.py
 ```
